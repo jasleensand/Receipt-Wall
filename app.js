@@ -195,17 +195,28 @@ function hexToHue(hex) {
 // ════════════════════════════════════════════
 // SOUND — fixed: stops reliably on mouseleave
 // ════════════════════════════════════════════
-function ensureAudio() {
-  if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-}
 
 // Web Audio API oscillator pattern
 // Based on standard MDN Web Audio API documentation
 // https://developer.mozilla.org/en-US/docs/Web_API/Web_Audio_API
 // Frequency mapping (hue → pitch) is my own design decision
-function playTone(hex) {
+function ensureAudio() {
+  if (!audioCtx) {
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  }
+  // Hosted sites often create the context as 'suspended'
+  // until explicitly resumed inside a user gesture
+  if (audioCtx.state === 'suspended') {
+    audioCtx.resume();
+  }
+}
+
+async function playTone(hex) {
   try {
     ensureAudio();
+    if (audioCtx.state === 'suspended') {
+      await audioCtx.resume();
+    }
     stopTone();
     const freq = 160 + (hexToHue(hex) / 360) * 520;
     const osc  = audioCtx.createOscillator();
