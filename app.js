@@ -75,7 +75,8 @@ const FK = {
   plum:'#702868',       pear:'#A0B840',        melon:'#D0C840',
   cherry:'#C02840',     fig:'#883050',         coconut:'#E0D8C8',
   kiwi:'#6A9830',       pomegranate:'#C02030', kit:'#b70012',
-  stra: '#D83858'
+  stra: '#D83858',      lychee: '#DC5349',     strawberry:'#D83858',
+   
   // Protein
   chicken:'#D4A050',    beef:'#8A2020',        pork:'#C87858',
   salmon:'#E87858',     tuna:'#6080A0',        lamb:'#A03828',
@@ -85,6 +86,8 @@ const FK = {
   chickpea:'#D4B880',   mince:'#8A2020',       sausage:'#B06040',
   bacon:'#C06050',      ham:'#D08070',         salami:'#B04040',
   fillet:'#D4A060',     steak:'#8A2020',       schnitzel:'#D4A860',
+  protein:'#faf0e6',
+   
   // Dairy
   butter:'#E8C840',     cheese:'#E8D890',      milk:'#dae8f3',
   egg:'#D8B858',        yoghurt:'#E8E0C8',     yogurt:'#E8E0C8',
@@ -93,11 +96,11 @@ const FK = {
   pasta:'#D4B870',      spaghet:'#D4B870',     noodle:'#D8C878',
   ndls:'#D8C878',       rice:'#E8E4D0',        bread:'#C89058',
   flour:'#E8E4D8',      oat:'#C8A860',         muesli:'#C8A030',
-  granola:'#C89838',    quinoa:'#D0C898',       barley:'#C4A858',
+  granola:'#C89838',    quinoa:'#D0C898',      barley:'#C4A858',
   cereal:'#D4A840',     cracker:'#D4B870',     pretzel:'#C8A058',
   sourdough:'#C89058',  roti:'#D4B878',        tortilla:'#D8C890',
   bagel:'#C89850',      croissant:'#D4A840',   pita:'#D8C890',
-  sndwch:'#C89058'
+  sndwch:'#C89058',     wheat:'#F5DEB3', 
   // Drinks
   coffee:'#7A4A20',     tea:'#8A6840',         juice:'#E89030',
   coke:'#C82020',       cola:'#C82020',        water:'#A0C0D8',
@@ -115,7 +118,8 @@ const FK = {
   // Snacks & Sweet
   chip:'#D4B040',       crisp:'#D4B040',       biscuit:'#C8A870',
   snac:'#e5a663',       cookie:'#C89050',      cake:'#E8C898',
-  chocolate:'#3A1E10',  choc:'#3A1E10',        berri:'#9050A0',
+  chocolate:'#3A1E10',  choc:'#3A1E10',        nestle:'#3A1E10',
+  teevee:'#3A1E10',      berri:'#9050A0',
   berry:'#9050A0',      icecream:'#E8D8C0',    gelato:'#E0D0E8',
   sorbet:'#E8C0C0',     lolly:'#D850A0',       candy:'#E05090',
   gummy:'#E060A0',      caramel:'#C88030',     fudge:'#8A5030',
@@ -144,7 +148,7 @@ const CAT = [
   { k:['pen','pencil','notebook','paper','folder','staple','tape','glue'],               c:'#E8E0D0' },
   { k:['shampoo','conditioner','soap','face','deodorant','perfume'],                     c:'#A0C0C8' },
   { k:['spray','cleaner','detergent','bleach','dishwash','laundry'],                     c:'#70B060' },
-  { k:['vitamin','tablet','capsule','panadol','bandaid','sunscreen','antacid'],          c:'#D07828' },
+  { k:['vitamin','tablet','capsule','panadol','bandaid','sunscreen','pads','antacid'],   c:'#D07828' },
   { k:['book','magazine','journal','novel'],                                              c:'#6A4828' },
   { k:['plant','pot','soil','seed','fertiliser'],                                        c:'#4A9048' },
   { k:['candle','diffuser','frame','cushion','vase','rug'],                              c:'#C8A050' },
