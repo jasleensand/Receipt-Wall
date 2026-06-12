@@ -149,8 +149,8 @@ const CAT = [
   { k:['plant','pot','soil','seed','fertiliser'],                                        c:'#4A9048' },
   { k:['candle','diffuser','frame','cushion','vase','rug'],                              c:'#C8A050' },
   { k:['toy','game','puzzle'],                                                            c:'#E05040' },
-  { k:['bag','backpack','wallet','purse'],                                               c:'#806040' },
-  { k:['shoe','boot','sandal','sneaker','thong'],                                        c:'#806040' },
+  { k:['bag','backpack','wallet','purse', 'usb'],                                         c:'#806040' },
+  { k:['shoes','boots','sandal','sneakers','thong'],                                        c:'#806040' },
 ];
 
 // ── Colour lookup — user colours take priority over everything ──
