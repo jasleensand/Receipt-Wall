@@ -75,6 +75,7 @@ const FK = {
   plum:'#702868',       pear:'#A0B840',        melon:'#D0C840',
   cherry:'#C02840',     fig:'#883050',         coconut:'#E0D8C8',
   kiwi:'#6A9830',       pomegranate:'#C02030', kit:'#b70012',
+  stra: '#D83858'
   // Protein
   chicken:'#D4A050',    beef:'#8A2020',        pork:'#C87858',
   salmon:'#E87858',     tuna:'#6080A0',        lamb:'#A03828',
@@ -96,6 +97,7 @@ const FK = {
   cereal:'#D4A840',     cracker:'#D4B870',     pretzel:'#C8A058',
   sourdough:'#C89058',  roti:'#D4B878',        tortilla:'#D8C890',
   bagel:'#C89850',      croissant:'#D4A840',   pita:'#D8C890',
+  sndwch:'#C89058'
   // Drinks
   coffee:'#7A4A20',     tea:'#8A6840',         juice:'#E89030',
   coke:'#C82020',       cola:'#C82020',        water:'#A0C0D8',
@@ -105,7 +107,7 @@ const FK = {
   almond:'#C8A870',     lemonade:'#E8E050',
   // Condiments & Sauces
   sauce:'#6A3010',      oil:'#C8B030',         honey:'#D09818',
-  jam:'#C83050',        mustard:'#D4C020',     mayo:'#E8E0A8',
+  jam:'#C83050',        mustard:'#D4C020',     myo:'#E8E0A8',
   ketchup:'#C82020',    vinegar:'#B09060',     relish:'#A84020',
   pickle:'#789040',     aioli:'#E8E0A0',       hummus:'#D4B880',
   pesto:'#608030',      tahini:'#C8AA70',      miso:'#906040',
