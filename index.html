@@ -1,0 +1,112 @@
+/* Receipt Wall — Jasleen Sandhu, 2026
+   Concept & design: original
+   Implementation: AI-assisted (Claude/Anthropic), see AI declaration
+   Libraries: Tesseract.js (OCR) */
+
+   
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Receipt Wall</title>
+  <!-- Tesseract.js — open source OCR engine
+     Used to extract text from receipt images
+     https://github.com/naptha/tesseract.js -->
+<script src="https://unpkg.com/tesseract.js@v2.1.0/dist/tesseract.min.js"></script>
+  <script src="https://unpkg.com/tesseract.js@v2.1.0/dist/tesseract.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+<!-- SPLASH -->
+<div id="s-splash" class="screen active" onclick="goTo('s-scanner')">
+  <div class="splash-title">RECEIPT WALL</div>
+  <div class="splash-tap">tap to begin</div>
+  <div class="splash-credit">A data visualisation project by Jasleen Sandhu - The University of Melbourne</div>
+</div>
+
+<!-- SCANNER -->
+<div id="s-scanner" class="screen bg-black">
+  <div class="scan-header">receipt wall</div>
+  <div class="scan-instruction">Place your receipt in the outline to be processed</div>
+  <div class="camera-wrap">
+    <video id="webcam" autoplay playsinline muted></video>
+    <canvas id="snap" style="display:none"></canvas>
+    <div class="guide-rect">
+      <div class="guide-border"></div>
+      <div class="gc tl"></div>
+      <div class="gc tr"></div>
+      <div class="gc bl"></div>
+      <div class="gc br"></div>
+      <div class="guide-label-top">store name at top</div>
+      <div class="guide-label-bot">Ensure items and prices are visible</div>
+    </div>
+  </div>
+  <div class="scanner-footer">
+    <button class="pill" onclick="goTo('s-wall')">receipt wall</button>
+    <div id="detect-pill">no receipt detected.....</div>
+    <button class="pill" id="view-barcode-btn" style="opacity:0.3;pointer-events:none;">view barcode</button>
+  </div>
+  <div class="upload-row">
+    <label for="file-input" class="upload-link">or upload a photo (jpg / png)</label>
+    <input type="file" id="file-input" accept="image/*">
+  </div>
+</div>
+
+<!-- PREVIEW -->
+<div id="s-preview" class="screen bg-orange">
+  <div id="barcode-area"></div>
+  <div class="preview-footer">
+    <div class="preview-meta" id="preview-meta">—</div>
+    <input type="text" id="note-input" placeholder="notes.....">
+    <div class="preview-btns">
+      <button class="pill" onclick="goTo('s-scanner')">scan receipt</button>
+      <button class="pill" id="order-btn">order</button>
+      <button class="pill" id="addwall-btn">add to wall</button>
+    </div>
+  </div>
+</div>
+
+<!-- COLOUR PICKER PANEL -->
+<div id="picker-panel">
+  <div class="picker-header">
+    <span>assign colours to unrecognised items</span>
+    <button class="picker-close" onclick="closePicker()">close</button>
+  </div>
+  <div id="picker-rows"></div>
+</div>
+
+<!-- WALL -->
+<div id="s-wall" class="screen bg-orange">
+  <div class="wall-header">receipt wall</div>
+  <div id="receipts-grid">
+    <div class="wall-empty" id="empty-msg">no receipts yet. scan your first receipt to view</div>
+  </div>
+  <div class="wall-footer">
+    <button class="pill" onclick="goTo('s-scanner')">scan receipt</button>
+    <button class="pill" id="wall-order-btn">order</button>
+  </div>
+</div>
+
+<!-- FULLSCREEN -->
+<div id="s-fullscreen" class="screen bg-orange" style="position:fixed;">
+  <button id="exit-btn" onclick="goTo('s-wall')">exit ×</button>
+  <div id="fs-barcode"></div>
+  <div class="fs-footer" id="fs-meta"></div>
+</div>
+
+<!-- PROCESSING -->
+<div id="processing">
+  <div class="proc-dots">
+    <div class="proc-dot"></div>
+    <div class="proc-dot"></div>
+    <div class="proc-dot"></div>
+  </div>
+  <div id="proc-msg">scanning receipt...</div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
